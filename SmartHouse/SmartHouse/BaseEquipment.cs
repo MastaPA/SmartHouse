@@ -8,13 +8,15 @@ namespace SmartHouse
 {
     class BaseEquipment
     {
+        private string name;
+        private bool state;
+
         public BaseEquipment()
         {
-            setState(0);
-
+            SetState(0);
         }
 
-        public void setState(int a)
+        public void SetState(int a)
         {
             if (a == 0)
                 state = false;
@@ -22,26 +24,23 @@ namespace SmartHouse
                 state = true;
         }
 
-        public bool getState() { return state; }
+        public bool GetState() { return state; }
 
-        public void setName()
+        public void SetName()
         {
             string s;
             do
             {
-                Console.WriteLine("Введите название - ");
+                Console.Write("Введите название - ");
                 s = Console.ReadLine();
-            } while (s == null);
+            } while (String.IsNullOrEmpty(s));
 
             name = s;
         } 
 
         public void Status ()
         {
-            Console.WriteLine("Имя объекта - " + name + "\nСостояние - " + ((state == true) ? "Вкл" : "Выкл"));
+            Console.WriteLine("Имя объекта - " + name + "\nСостояние - " + (state ? "Вкл" : "Выкл"));
         }
-
-        private string name;
-        private bool state;
     }
 }

@@ -10,12 +10,13 @@ namespace SmartHouse
     {
         static void Main(string[] args)
         {
-            BaseEquipment eqip = new BaseEquipment();
+            Lamp eqip = new Lamp();
             eqip.SetName();
             eqip.SetState(1);
             eqip.Status();
 
-            Console.ReadKey();
+            Console.ReadLine();
+            //Console.ReadKey();
         }
     }
 }
