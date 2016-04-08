@@ -10,10 +10,14 @@ namespace SmartHouse
     {
         static void Main(string[] args)
         {
-            Lamp eqip = new Lamp();
-            eqip.SetName();
-            eqip.SetState(1);
-            eqip.Status();
+            Menu sMenu = new Menu();
+            sMenu.Status();
+
+            sMenu.Name = "Lamp1";
+            sMenu.State = true;
+            sMenu.Brightness = 50;
+
+            sMenu.Status();
 
             Console.ReadLine();
             //Console.ReadKey();

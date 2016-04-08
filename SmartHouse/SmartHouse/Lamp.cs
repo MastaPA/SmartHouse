@@ -8,13 +8,6 @@ namespace SmartHouse
 {
     class Lamp : BaseEquipment
     {
-        //private string name;
-        //private bool state;
-
-       // public new void Status()
-        //{
-          //  Console.WriteLine("Объект - лампа");
-            //Console.WriteLine("Имя объекта - " + name + "\nСостояние - " + (state ? "Вкл" : "Выкл"));
-        //}
+        public int Brightness {get; set; }
     }
 }

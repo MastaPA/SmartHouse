@@ -8,39 +8,21 @@ namespace SmartHouse
 {
     class BaseEquipment
     {
-        private string name;
-        private bool state;
+        static int counter;
+
+        public static int Counter
+        {
+            get { return counter; }
+        }
 
         public BaseEquipment()
         {
-            SetState(0);
+            State = false;
+            counter += 1;
         }
 
-        public void SetState(int a)
-        {
-            if (a == 0)
-                state = false;
-            else
-                state = true;
-        }
-
-        public bool GetState() { return state; }
-
-        public void SetName()
-        {
-            string s;
-            do
-            {
-                Console.Write("Введите название - ");
-                s = Console.ReadLine();
-            } while (String.IsNullOrEmpty(s));
-
-            name = s;
-        } 
-
-        public void Status ()
-        {
-            Console.WriteLine("Имя объекта - " + name + "\nСостояние - " + (state ? "Вкл" : "Выкл"));
-        }
+        public bool State {get; set;}
+        
+        public string Name { get; set; }
     }
 }
