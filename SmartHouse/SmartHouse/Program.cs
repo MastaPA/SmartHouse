@@ -10,17 +10,36 @@ namespace SmartHouse
     {
         static void Main(string[] args)
         {
-            Menu sMenu = new Menu();
-            sMenu.Status();
+            Console.WriteLine("Вас приветствует Ваш туповатый дом!");
+            Console.WriteLine("1. Создать объект.");
+            Console.WriteLine("2. Просмотр объектов.");
+            Console.WriteLine("3. Изменение объектов.");
+            Console.WriteLine("4. Удаление объектов.");
+            Console.WriteLine("5. Выход из программы.");
 
-            sMenu.Name = "Lamp1";
-            sMenu.State = true;
-            sMenu.Brightness = 50;
+            int choice = Convert.ToInt32(Console.ReadLine());
 
-            sMenu.Status();
+            switch (choice)
+            {
+                case 1:
+                    Menu item1 = new Menu();
+                    break;
+                case 2:
+                    item1.Status();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
 
-            Console.ReadLine();
-            //Console.ReadKey();
+            }
+
+            
+
+            
+            Console.ReadKey();
         }
     }
 }

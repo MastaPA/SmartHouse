@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHouse
 {
-    class Menu : Lamp 
+    public class Menu
     {
         public void SetName()
         {
@@ -31,12 +31,11 @@ namespace SmartHouse
            }
        }
 
-        
         public void Status()
         {
-           Console.WriteLine("ID = " + Counter);
-           Console.WriteLine("Имя объекта - " + Name + "\nСостояние - " + (State ? "Вкл" : "Выкл"));
-           Console.WriteLine("Яркость на " + Brightness + "%");
+           Console.Write("ID = " + Lamp.Counter + " | ");
+           Console.Write("Имя объекта - " + Lamp.Name + " | " + "Состояние - " + (Lamp.State ? "Вкл" : "Выкл") + " | ");
+           Console.WriteLine("Яркость на " + Lamp.Brightness + "%");
         }
     }
 }
