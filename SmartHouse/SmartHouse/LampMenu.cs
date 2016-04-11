@@ -1,34 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SmartHouse
 {
-    public class Menu
+    internal class LampMenu
     {
-        private string name;
+        static public string name;
         private bool state;
         private int bright;
 
-        Menu (string name, bool state, int bright)
+        public LampMenu (Lamp obj)
         {
-            this.name = name;
-            this.state = state;
-            this.bright = bright;
+            name = obj.Name;
+            state = obj.State;
+            bright = obj.Brightness;
         }
         
-        public void SetName()
+        static public void SetName(string a)
         {
-            string a; 
-           do
+           while (String.IsNullOrEmpty(a))
             {
-                Console.Write("Введите название - ");
+                Console.WriteLine("Вы не ввели название!\nПопробуйте снова");
                 a = Console.ReadLine();
-            } while (String.IsNullOrEmpty(a));
-
-           name = a;
+            }
+            name = a;
         }
 
         public void SetState(int s)
