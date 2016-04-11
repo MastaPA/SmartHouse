@@ -17,12 +17,16 @@ namespace SmartHouse
             Console.WriteLine("4. Удаление объектов.");
             Console.WriteLine("5. Выход из программы.");
 
-            int choice = Convert.ToInt32(Console.ReadLine());
+            int choice = Int32.Parse(Console.ReadLine());
 
             switch (choice)
             {
                 case 1:
-                    Menu item1 = new Menu();
+                    Lamp lamp1 = new Lamp();
+                    Menu item1 = new Menu(string Name, bool lamp1.State, int lamp1.Brightness);
+                    item1.SetName();
+                    item1.SetState(1);
+                    item1.SetBright(50);
                     break;
                 case 2:
                     item1.Status();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHouse
 {
-    private class BaseEquipment
+    class BaseEquipment
     {
         private static int counter;
 

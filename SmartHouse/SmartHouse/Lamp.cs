@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHouse
 {
-    public class Lamp : BaseEquipment
+    class Lamp : BaseEquipment
     {
         public int Brightness { get; set; }
     }
