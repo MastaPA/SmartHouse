@@ -5,28 +5,25 @@ namespace SmartHouse
     internal class LampMenu
     {
         static public string name;
-        private bool state;
-        private int bright;
-
-        public LampMenu (Lamp obj)
-        {
-            name = obj.Name;
-            state = obj.State;
-            bright = obj.Brightness;
-        }
+        static private bool state;
+        static private int bright;
+        private int ID;
         
-        static public void SetName(string a)
+        static public void SetName(Lamp obj)
         {
-           while (String.IsNullOrEmpty(a))
+            Console.Write("Введите название - ");
+            string name = null;
+            name = Console.ReadLine();
+            while (String.IsNullOrEmpty(name))
             {
                 Console.WriteLine("Вы не ввели название!\nПопробуйте снова");
-                a = Console.ReadLine();
+                name = Console.ReadLine();
             }
-            name = a;
-            //Console.WriteLine("The name is {0} ", name);
+            
+
         }
 
-        public void SetState(int s)
+        static public void SetState(int s)
         {
             if (s == 0)
             {
@@ -38,7 +35,7 @@ namespace SmartHouse
             }
         }
 
-        public void SetBright(int level)
+        static public void SetBright(int level)
        {
            if (level <= 100 && level >= 0)
            {
@@ -51,11 +48,19 @@ namespace SmartHouse
            }
        }
 
-        public void Status()
+        static public void Status(Lamp obj)
         {
-           Console.Write("ID = " + Lamp.Counter + " | ");
-           Console.Write("Имя объекта - " + name + " | " + "Состояние - " + (state ? "Вкл" : "Выкл") + " | ");
-           Console.WriteLine("Яркость на " + bright + "%");
+            Console.Write("ID = {0} |", obj.ID);
+            Console.Write("Имя объекта - {0} | Состояние - {1}  | ", obj.Name, (obj.State ? "Вкл" : "Выкл"));
+            Console.WriteLine("Яркость на {0}%", obj.Brightness);
+        }
+        
+        public LampMenu(Lamp obj)
+        {
+            name = obj.Name;
+            state = obj.State;
+            bright = obj.Brightness;
+            ID = obj.ID;
         }
     }
 }

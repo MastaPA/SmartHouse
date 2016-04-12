@@ -8,10 +8,8 @@ namespace SmartHouse
         {
             Lamp.lamp[BaseEquipment.Counter] = new Lamp();
             Console.Clear();
-            Console.Write("Введите название - ");
-            string name;
-            name = Console.ReadLine();
-            LampMenu.SetName(name);
+            int i = BaseEquipment.Counter;
+            LampMenu.SetName(Lamp.lamp[i]);
             Console.WriteLine("Объект успешно создан\nНажмите Enter для продолжения");
             Console.ReadKey();
             MainMenu.ChoiceMenu();
