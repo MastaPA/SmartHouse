@@ -23,6 +23,7 @@ namespace SmartHouse
                 a = Console.ReadLine();
             }
             name = a;
+            //Console.WriteLine("The name is {0} ", name);
         }
 
         public void SetState(int s)
