@@ -9,6 +9,7 @@ namespace SmartHouse
             Console.WriteLine("Вас приветствует Ваш туповатый дом!");
             Console.WriteLine("1. Настройки.");
             Console.WriteLine("2. Выход.");
+            Console.Write("\n:");
 
             int choice = 0;
 

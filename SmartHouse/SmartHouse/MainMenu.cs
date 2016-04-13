@@ -13,18 +13,20 @@ namespace SmartHouse
             Console.WriteLine("3. Изменение объектов.");
             Console.WriteLine("4. Удаление объектов.");
             Console.WriteLine("5. Выход из программы.");
+            Console.Write("\n:");
 
             int choice = Int32.Parse(Console.ReadLine());
 
             switch (choice)
             {
                 case 1:
-                    CreateMenu.CreateLamp();
+                    LampMenu.CreateLamp();
                     break;
                 case 2:
                     StatusMenu.ViewObjects();
                     break;
                 case 3:
+                    PropertyMenu.IdSelection();
                     break;
                 case 4:
                     break;

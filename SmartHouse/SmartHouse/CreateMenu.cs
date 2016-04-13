@@ -6,13 +6,7 @@ namespace SmartHouse
     {
         static public void CreateLamp ()
         {
-            Lamp.lamp[BaseEquipment.Counter] = new Lamp();
-            Console.Clear();
-            int i = BaseEquipment.Counter;
-            LampMenu.SetName(Lamp.lamp[i]);
-            Console.WriteLine("Объект успешно создан\nНажмите Enter для продолжения");
-            Console.ReadKey();
-            MainMenu.ChoiceMenu();
+            // Тут будет выбор какого типа объект создавать
         }
     }
 }

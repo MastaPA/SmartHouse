@@ -7,16 +7,17 @@ namespace SmartHouse
         static public void ViewObjects()
         {
             Console.Clear();
-            for (int i = 0; i < Lamp.lamp.Length; i++)
+            for (int i = 0; i < LampMenu.lamp.Length; i++)
             {
-                if (Lamp.lamp[i] != null)
+                if (LampMenu.lamp[i] != null)
                 {
-                    LampMenu.Status(Lamp.lamp[i]);
+                    LampMenu.Status(LampMenu.lamp[i]);
                 }
                 else { continue; }
-                //MainMenu.ChoiceMenu();
             }
+            Console.WriteLine("\nНажмите Enter для продолжения");
             Console.ReadKey();
+            MainMenu.ChoiceMenu();
         }
     }
 }
