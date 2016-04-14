@@ -52,6 +52,7 @@ namespace SmartHouse
             Console.Clear();
             Console.WriteLine("Назначьте яркость от 1 до 100");
             Console.WriteLine("  *Примечание. При яркости выше 100 лампочка сгорит и выключится.");
+            Console.Write("\n:");
             int level = Int32.Parse(Console.ReadLine());
             if (level <= 100 && level > 0)
             {

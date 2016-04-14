@@ -20,7 +20,7 @@ namespace SmartHouse
 
             Console.WriteLine("Выберите ID объекта, состояние которого вы хотите изменить.");
             Console.Write("\n:");
-            int id = Int32.Parse(Console.ReadLine());
+            int id = Int32.Parse(Console.ReadLine()) - 1;
             PropertySelection(id);
         }
 
