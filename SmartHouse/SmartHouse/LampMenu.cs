@@ -2,74 +2,75 @@
 
 namespace SmartHouse
 {
-    static internal class LampMenu
+    internal static class LampMenu
     {
-        static public Lamp[] lamp = new Lamp[10];
+        public static Lamp[] lamp = new Lamp[10];
 
-        static public void CreateLamp()
+        public static void CreateLamp()
         {
             int id = BaseEquipment.Counter;
             lamp[id] = new Lamp();
             SetName(lamp[id]);
-            Console.WriteLine("Объект успешно создан\nНажмите Enter для продолжения");
+            Console.WriteLine("lampect successfully created\nPress Enter to continue");
             Console.ReadKey();
             MainMenu.ChoiceMenu();
         }
 
-        static public void SetName(Lamp obj)
+        public static void SetName(Lamp lamp)
         {
             Console.Clear();
-            Console.Write("Введите название - ");
+            Console.Write("Enter the title - ");
             string name;
             name = Console.ReadLine();
             while (String.IsNullOrEmpty(name))
             {
-                Console.WriteLine("Вы не ввели название!\nПопробуйте снова");
+                Console.WriteLine("You do not enter the title!\nTry again");
                 name = Console.ReadLine();
             }
-            obj.Name = name;
+            lamp.Name = name;
         }
 
-        static public void SetState(Lamp obj)
+        public static void SetState(Lamp lamp)
         {
             Console.Clear();
-            Console.WriteLine("Нажмите 1 для включения или 0 для выключения");
+            Console.WriteLine("Press 1 to turn on or 0 to turn off");
+            Console.Write("\n:");
             int s = Int32.Parse(Console.ReadLine());
 
             if (s == 0)
             {
-                obj.State = false;
+                lamp.State = false;
             }
             else
             {
-                obj.State = true;
-                obj.Brightness = 100;
+                lamp.State = true;
+                lamp.Brightness = 100;
             }
         }
 
-        static public void SetBright(Lamp obj)
+        public static void SetBrightness(Lamp lamp)
         {
             Console.Clear();
-            Console.WriteLine("Назначьте яркость от 1 до 100");
-            Console.WriteLine("  *Примечание. При яркости выше 100 лампочка сгорит и выключится.");
+            Console.WriteLine("Set brightness from 1 to 100");
+            Console.WriteLine("  *Note. Whith brightness more then 100 lamp will burn and turn off.");
             Console.Write("\n:");
             int level = Int32.Parse(Console.ReadLine());
             if (level <= 100 && level > 0)
             {
-                obj.Brightness = level;
+                lamp.Brightness = level;
             }
             else
             {
-                obj.Brightness = 0;
-                obj.State = false;
+                lamp.Brightness = 0;
+                lamp.State = false;
             }
         }
 
-        static public void Status(Lamp obj)
+        public static void Status(Lamp lamp)
         {
-            Console.Write("ID = {0} |", obj.ID);
-            Console.Write("Имя объекта - {0} | Состояние - {1}  | ", obj.Name, (obj.State ? "Вкл" : "Выкл"));
-            Console.WriteLine("Яркость на {0}%", obj.Brightness);
+            Console.Write("ID = {0} |", lamp.ID);
+            Console.Write("Name - {0} | State - {1}  | ", lamp.Name, (lamp.State ? "On" : "Off"));
+            Console.WriteLine("Brightness {0}%", lamp.Brightness);
         }
     }
 }

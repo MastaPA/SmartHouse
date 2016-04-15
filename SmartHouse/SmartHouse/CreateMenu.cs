@@ -4,7 +4,7 @@ namespace SmartHouse
 {
     internal class CreateMenu
     {
-        static public void CreateLamp ()
+        public static void CreateLamp()
         {
             // Тут будет выбор какого типа объект создавать
         }

@@ -4,7 +4,7 @@ namespace SmartHouse
 {
     internal class StatusMenu
     {
-        static public void ViewObjects()
+        public static void ViewObjects()
         {
             Console.Clear();
             for (int i = 0; i < LampMenu.lamp.Length; i++)
@@ -15,7 +15,7 @@ namespace SmartHouse
                 }
                 else { continue; }
             }
-            Console.WriteLine("\nНажмите Enter для продолжения");
+            Console.WriteLine("\nPress Enter to continue");
             Console.ReadKey();
             MainMenu.ChoiceMenu();
         }

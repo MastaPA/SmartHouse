@@ -10,7 +10,7 @@ namespace SmartHouse
 
         public Lamp ()
         {
-            ID = BaseEquipment.Counter;
+            ID = Counter;
         }
     }
 }

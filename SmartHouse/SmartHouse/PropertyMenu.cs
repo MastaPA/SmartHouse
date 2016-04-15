@@ -4,10 +4,10 @@ namespace SmartHouse
 {
     internal class PropertyMenu // Пока что только для лампочек
     {
-        static public void IdSelection()
+        public static void IdSelection()
         {
             Console.Clear();
-            Console.WriteLine("Список существующих объектов.");
+            Console.WriteLine("Objects list.");
             
             for (int i = 0; i < LampMenu.lamp.Length; i++)
             {
@@ -18,23 +18,23 @@ namespace SmartHouse
                 else { continue; }
             }
 
-            Console.WriteLine("Выберите ID объекта, состояние которого вы хотите изменить.");
+            Console.WriteLine("Choice objects ID, to change property.");
             Console.Write("\n:");
             int id = Int32.Parse(Console.ReadLine()) - 1;
             PropertySelection(id);
         }
 
-        static public void PropertySelection(int id)
+        public static void PropertySelection(int id)
         {
             int choice = 0;
             while (choice != 4)
             {
                 Console.Clear();
-                Console.WriteLine("Выберите что вы хотите сделать с объектом.");
-                Console.WriteLine("1. Включить или выключить.");
-                Console.WriteLine("2. Изменить имя.");
-                Console.WriteLine("3. Изменить яркость.");
-                Console.WriteLine("4. Назад.");
+                Console.WriteLine("Property list.");
+                Console.WriteLine("1. Turn on or turn off.");
+                Console.WriteLine("2. Change name.");
+                Console.WriteLine("3. Change brightness.");
+                Console.WriteLine("4. Back to previus menu.");
                 Console.Write("\n:");
 
                 choice = Int32.Parse(Console.ReadLine());
@@ -48,7 +48,7 @@ namespace SmartHouse
                         LampMenu.SetName(LampMenu.lamp[id]);
                         break;
                     case 3:
-                        LampMenu.SetBright(LampMenu.lamp[id]);
+                        LampMenu.SetBrightness(LampMenu.lamp[id]);
                         break;
                     case 4:
                         IdSelection();

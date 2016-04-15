@@ -6,9 +6,9 @@ namespace SmartHouse
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Вас приветствует Ваш туповатый дом!");
-            Console.WriteLine("1. Настройки.");
-            Console.WriteLine("2. Выход.");
+            Console.WriteLine("Welcome to the SmartHouse!");
+            Console.WriteLine("1. Settings.");
+            Console.WriteLine("2. Exit.");
             Console.Write("\n:");
 
             int choice = 0;
@@ -25,7 +25,7 @@ namespace SmartHouse
                         Console.WriteLine("Press any key to exit");
                         break;
                     default:
-                        Console.WriteLine("Вы ввели недопустимое значение\nПопробуйте снова");
+                        Console.WriteLine("You enter invalid value\nTry again");
                         break;
                 }
              }

@@ -4,15 +4,15 @@ namespace SmartHouse
 {
     internal class MainMenu
     {
-        static public void ChoiceMenu()
+        public static void ChoiceMenu()
         {
             Console.Clear();
             Console.WriteLine("Main Menu");
-            Console.WriteLine("1. Создать объект.");
-            Console.WriteLine("2. Просмотр объектов.");
-            Console.WriteLine("3. Изменение объектов.");
-            Console.WriteLine("4. Удаление объектов.");
-            Console.WriteLine("5. Выход из программы.");
+            Console.WriteLine("1. Create object.");
+            Console.WriteLine("2. Object Preview.");
+            Console.WriteLine("3. Modify objecst.");
+            Console.WriteLine("4. Remove objects.");
+            Console.WriteLine("5. Quit programm.");
             Console.Write("\n:");
 
             int choice = Int32.Parse(Console.ReadLine());
