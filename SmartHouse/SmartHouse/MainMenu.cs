@@ -15,26 +15,34 @@ namespace SmartHouse
             Console.WriteLine("5. Quit programm.");
             Console.Write("\n:");
 
-            int choice = Int32.Parse(Console.ReadLine());
-
-            switch (choice)
+            int choice = 0;
+            string input = Console.ReadLine();
+            if (Int32.TryParse(input, out choice))
             {
-                case 1:
-                    LampMenu.CreateLamp();
-                    break;
-                case 2:
-                    StatusMenu.ViewObjects();
-                    break;
-                case 3:
-                    PropertyMenu.IdSelection();
-                    break;
-                case 4:
-                    break;
-                case 5:
+                switch (choice)
+                {
+                    case 1:
+                        LampMenu.CreateLamp();
+                        break;
+                    case 2:
+                        StatusMenu.ViewObjects();
+                        break;
+                    case 3:
+                        PropertyMenu.IdSelection();
+                        break;
+                    case 4:
+                        DeleteMenu.IdSelection();
+                        break;
+                    case 5:
 
-                    break;
-                default:
-                    break;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Incorrect input");
             }
         }   
     }

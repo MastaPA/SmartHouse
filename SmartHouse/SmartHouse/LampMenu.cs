@@ -4,14 +4,15 @@ namespace SmartHouse
 {
     internal static class LampMenu
     {
-        public static Lamp[] lamp = new Lamp[10];
+        public static Lamp[] lamps = new Lamp[10];
 
         public static void CreateLamp()
         {
             int id = BaseEquipment.Counter;
-            lamp[id] = new Lamp();
-            SetName(lamp[id]);
-            Console.WriteLine("lampect successfully created\nPress Enter to continue");
+            lamps[id] = new Lamp(id);
+            SetName(lamps[id]);
+
+            Console.WriteLine("lamp successfully created\nPress Enter to continue");
             Console.ReadKey();
             MainMenu.ChoiceMenu();
         }
@@ -20,13 +21,14 @@ namespace SmartHouse
         {
             Console.Clear();
             Console.Write("Enter the title - ");
-            string name;
-            name = Console.ReadLine();
+            string name = Console.ReadLine();
+
             while (String.IsNullOrEmpty(name))
             {
                 Console.WriteLine("You do not enter the title!\nTry again");
                 name = Console.ReadLine();
             }
+
             lamp.Name = name;
         }
 
@@ -55,6 +57,7 @@ namespace SmartHouse
             Console.WriteLine("  *Note. Whith brightness more then 100 lamp will burn and turn off.");
             Console.Write("\n:");
             int level = Int32.Parse(Console.ReadLine());
+
             if (level <= 100 && level > 0)
             {
                 lamp.Brightness = level;
@@ -71,6 +74,16 @@ namespace SmartHouse
             Console.Write("ID = {0} |", lamp.ID);
             Console.Write("Name - {0} | State - {1}  | ", lamp.Name, (lamp.State ? "On" : "Off"));
             Console.WriteLine("Brightness {0}%", lamp.Brightness);
+        }
+
+        public static void Delete (int id)
+        {
+            for (int i = 0; i <= lamps.Length; i++)
+            {
+                if (i == id)
+                    lamps[i] = null;
+            }
+
         }
     }
 }

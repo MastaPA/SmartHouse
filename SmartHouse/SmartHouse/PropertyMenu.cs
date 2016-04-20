@@ -9,19 +9,24 @@ namespace SmartHouse
             Console.Clear();
             Console.WriteLine("Objects list.");
             
-            for (int i = 0; i < LampMenu.lamp.Length; i++)
+            for (int i = 0; i < LampMenu.lamps.Length; i++)
             {
-                if (LampMenu.lamp[i] != null)
+                if (LampMenu.lamps[i] != null)
                 {
-                    LampMenu.Status(LampMenu.lamp[i]);
+                    LampMenu.Status(LampMenu.lamps[i]);
                 }
                 else { continue; }
             }
 
             Console.WriteLine("Choice objects ID, to change property.");
             Console.Write("\n:");
-            int id = Int32.Parse(Console.ReadLine()) - 1;
-            PropertySelection(id);
+            int id = 0;
+            string input = Console.ReadLine();
+            if (Int32.TryParse(input, out id))
+            {
+                PropertySelection(id);
+            }
+            else { Console.WriteLine("Incorrect input"); }
         }
 
         public static void PropertySelection(int id)
@@ -42,13 +47,13 @@ namespace SmartHouse
                 switch (choice)
                 {
                     case 1:
-                        LampMenu.SetState(LampMenu.lamp[id]);
+                        LampMenu.SetState(LampMenu.lamps[id]);
                         break;
                     case 2:
-                        LampMenu.SetName(LampMenu.lamp[id]);
+                        LampMenu.SetName(LampMenu.lamps[id]);
                         break;
                     case 3:
-                        LampMenu.SetBrightness(LampMenu.lamp[id]);
+                        LampMenu.SetBrightness(LampMenu.lamps[id]);
                         break;
                     case 4:
                         IdSelection();

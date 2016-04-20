@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseEquipment.cs" />
     <Compile Include="CreateMenu.cs" />
+    <Compile Include="DeleteMenu.cs" />
     <Compile Include="Lamp.cs" />
     <Compile Include="LampMenu.cs" />
     <Compile Include="MainMenu.cs" />

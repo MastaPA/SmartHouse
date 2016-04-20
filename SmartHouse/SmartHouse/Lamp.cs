@@ -8,9 +8,9 @@ namespace SmartHouse
 
         public int ID { get; set; }
 
-        public Lamp ()
+        public Lamp ( int id)
         {
-            ID = Counter;
+            ID = id;
         }
     }
 }

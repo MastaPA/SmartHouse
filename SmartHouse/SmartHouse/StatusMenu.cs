@@ -7,11 +7,11 @@ namespace SmartHouse
         public static void ViewObjects()
         {
             Console.Clear();
-            for (int i = 0; i < LampMenu.lamp.Length; i++)
+            for (int i = 0; i < LampMenu.lamps.Length; i++)
             {
-                if (LampMenu.lamp[i] != null)
+                if (LampMenu.lamps[i] != null)
                 {
-                    LampMenu.Status(LampMenu.lamp[i]);
+                    LampMenu.Status(LampMenu.lamps[i]);
                 }
                 else { continue; }
             }

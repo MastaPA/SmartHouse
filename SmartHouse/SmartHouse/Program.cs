@@ -15,18 +15,21 @@ namespace SmartHouse
 
             while (choice != 2)
             {
-                choice = Int32.Parse(Console.ReadLine());
-                switch (choice)
+                string input = Console.ReadLine();
+                if (Int32.TryParse(input, out choice))
                 {
-                    case 1:
-                        MainMenu.ChoiceMenu();
-                        break;
-                    case 2:
-                        Console.WriteLine("Press any key to exit");
-                        break;
-                    default:
-                        Console.WriteLine("You enter invalid value\nTry again");
-                        break;
+                    switch (choice)
+                    {
+                        case 1:
+                            MainMenu.ChoiceMenu();
+                            break;
+                        case 2:
+                            Console.WriteLine("Press any key to exit");
+                            break;
+                        default:
+                            Console.WriteLine("You enter invalid value\nTry again");
+                            break;
+                    }
                 }
              }
 
