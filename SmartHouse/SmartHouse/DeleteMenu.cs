@@ -4,18 +4,25 @@ namespace SmartHouse
 {
     public class DeleteMenu
     {
-        public static void IdSelection()
+        public static void SelectionId()
         {
             Console.Clear();
             Console.WriteLine("Objects list.");
 
-            for (int i = 0; i < LampMenu.lamps.Length; i++)
+            if (LampMenu.lamps == null || LampMenu.lamps.Length == 0)
             {
-                if (LampMenu.lamps[i] != null)
+                Console.WriteLine("No items to delete.");
+            }
+            else
+            {
+                for (int i = 0; i < LampMenu.lamps.Length; i++)
                 {
-                    LampMenu.Status(LampMenu.lamps[i]);
+                    Console.WriteLine("Step" + i);
+                    if (LampMenu.lamps[i] != null)
+                    {
+                        LampMenu.Status(LampMenu.lamps[i]);
+                    }
                 }
-                else { continue; }
             }
 
             Console.WriteLine("\nChoice objects ID, to delete, \nor press M to go to Main Menu .");
@@ -61,7 +68,7 @@ namespace SmartHouse
                 case 'y':
                 case 'Y':
                     LampMenu.Delete(id);
-                    IdSelection();
+                    SelectionId();
                     break;
                 case 'n':
                 case 'N':

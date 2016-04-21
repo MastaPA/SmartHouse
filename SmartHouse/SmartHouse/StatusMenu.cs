@@ -2,7 +2,7 @@
 
 namespace SmartHouse
 {
-    internal class StatusMenu
+    internal static class StatusMenu
     {
         public static void ViewObjects()
         {

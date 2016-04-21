@@ -4,7 +4,7 @@ namespace SmartHouse
 {
     internal class PropertyMenu // Пока что только для лампочек
     {
-        public static void IdSelection()
+        public static void SelectionId()
         {
             Console.Clear();
             Console.WriteLine("Objects list.");
@@ -15,7 +15,6 @@ namespace SmartHouse
                 {
                     LampMenu.Status(LampMenu.lamps[i]);
                 }
-                else { continue; }
             }
 
             Console.WriteLine("Choice objects ID, to change property.");
@@ -26,7 +25,10 @@ namespace SmartHouse
             {
                 PropertySelection(id);
             }
-            else { Console.WriteLine("Incorrect input"); }
+            else 
+            { 
+                Console.WriteLine("Incorrect input"); 
+            }
         }
 
         public static void PropertySelection(int id)
@@ -56,7 +58,7 @@ namespace SmartHouse
                         LampMenu.SetBrightness(LampMenu.lamps[id]);
                         break;
                     case 4:
-                        IdSelection();
+                        SelectionId();
                         break;
                 }
             }

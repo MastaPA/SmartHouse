@@ -9,7 +9,10 @@ namespace SmartHouse
         public static void CreateLamp()
         {
             int id = BaseEquipment.Counter;
-            lamps[id] = new Lamp(id);
+            lamps[id] = new Lamp 
+            { 
+                Id = id
+            };
             SetName(lamps[id]);
 
             Console.WriteLine("lamp successfully created\nPress Enter to continue");
@@ -71,7 +74,7 @@ namespace SmartHouse
 
         public static void Status(Lamp lamp)
         {
-            Console.Write("ID = {0} |", lamp.ID);
+            Console.Write("ID = {0} |", lamp.Id);
             Console.Write("Name - {0} | State - {1}  | ", lamp.Name, (lamp.State ? "On" : "Off"));
             Console.WriteLine("Brightness {0}%", lamp.Brightness);
         }

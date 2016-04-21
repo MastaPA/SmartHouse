@@ -6,11 +6,11 @@ namespace SmartHouse
     {
         public int Brightness { get; set; }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
 
-        public Lamp ( int id)
-        {
-            ID = id;
-        }
+        //public Lamp ( int id)
+        //{
+        //    Id = id;
+        //}
     }
 }
