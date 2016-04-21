@@ -15,6 +15,11 @@ namespace SmartHouse
                 }
                 else { continue; }
             }
+
+            foreach (BaseEquipment obj in List.objects)
+            {
+                Console.WriteLine(obj.Id)
+            }
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadKey();
             MainMenu.ChoiceMenu();

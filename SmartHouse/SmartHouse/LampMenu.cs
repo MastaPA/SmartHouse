@@ -1,26 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SmartHouse
 {
     internal static class LampMenu
     {
-        public static Lamp[] lamps = new Lamp[10];
+        //public static Lamp[] lamps = new Lamp[10];
 
         public static void CreateLamp()
         {
             int id = BaseEquipment.Counter;
-            lamps[id] = new Lamp 
-            { 
-                Id = id
-            };
-            SetName(lamps[id]);
-
+            List.objects.Add(new Lamp() { Id = id });
+            SetName(id);
+            
             Console.WriteLine("lamp successfully created\nPress Enter to continue");
             Console.ReadKey();
             MainMenu.ChoiceMenu();
         }
 
-        public static void SetName(Lamp lamp)
+        public static void SetName(int id)
         {
             Console.Clear();
             Console.Write("Enter the title - ");
@@ -32,10 +30,10 @@ namespace SmartHouse
                 name = Console.ReadLine();
             }
 
-            lamp.Name = name;
+            List.objects[id].Name = name;
         }
 
-        public static void SetState(Lamp lamp)
+        public static void SetState(int id)
         {
             Console.Clear();
             Console.WriteLine("Press 1 to turn on or 0 to turn off");
@@ -44,12 +42,12 @@ namespace SmartHouse
 
             if (s == 0)
             {
-                lamp.State = false;
+                List.objects[id].State = false;
             }
             else
             {
-                lamp.State = true;
-                lamp.Brightness = 100;
+                List.objects[id].State = true;
+                //List.objects[id].Brightness = 100;
             }
         }
 
@@ -72,21 +70,21 @@ namespace SmartHouse
             }
         }
 
-        public static void Status(Lamp lamp)
+        public static void Status(int id)
         {
-            Console.Write("ID = {0} |", lamp.Id);
-            Console.Write("Name - {0} | State - {1}  | ", lamp.Name, (lamp.State ? "On" : "Off"));
-            Console.WriteLine("Brightness {0}%", lamp.Brightness);
+            Console.Write("ID = {0} |", List.objects[id].Id);
+            Console.Write("Name - {0} | State - {1}  | ", List.objects[id].Name, (List.objects[id].State ? "On" : "Off"));
+            //Console.WriteLine("Brightness {0}%", lamp.Brightness);
         }
 
         public static void Delete (int id)
         {
-            for (int i = 0; i <= lamps.Length; i++)
-            {
-                if (i == id)
-                    lamps[i] = null;
-            }
-
+            //for (int i = 0; i <= lamps.Length; i++)
+            //{
+            //    if (i == id)
+            //        lamps[i] = null;
+            //}
+            List.objects.RemoveAt(id);
         }
     }
 }

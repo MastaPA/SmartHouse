@@ -9,7 +9,7 @@ namespace SmartHouse
             Console.Clear();
             Console.WriteLine("Objects list.");
 
-            if (LampMenu.lamps == null || LampMenu.lamps.Length == 0)
+            if (LampMenu.lamps == null || LampMenu.lamps.Length == 0) // do not work yet
             {
                 Console.WriteLine("No items to delete.");
             }
