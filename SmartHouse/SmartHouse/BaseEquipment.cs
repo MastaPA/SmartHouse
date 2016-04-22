@@ -2,14 +2,9 @@
 
 namespace SmartHouse
 {
-    internal abstract class BaseEquipment
+    public abstract class BaseEquipment
     {
-        private static int counter;
-
-        public static int Counter
-        {
-            get { return counter; }
-        }
+        public static int Counter { get; private set; }
 
         public bool State { get; set; }
         
@@ -20,7 +15,7 @@ namespace SmartHouse
         public BaseEquipment()
         {
             State = false;
-            counter += 1;
+            Counter += 1;
         }
 
         public abstract void Status();
