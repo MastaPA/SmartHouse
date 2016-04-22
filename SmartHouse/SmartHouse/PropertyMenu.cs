@@ -6,28 +6,30 @@ namespace SmartHouse
     {
         public static void SelectionId()
         {
-            Console.Clear();
-            Console.WriteLine("Objects list.");
-            
-            for (int i = 0; i < LampMenu.lamps.Length; i++)
-            {
-                if (LampMenu.lamps[i] != null)
-                {
-                    LampMenu.Status(LampMenu.lamps[i]);
-                }
-            }
+            StatusMenu.ViewObjects();
 
-            Console.WriteLine("Choice objects ID, to change property.");
+            Console.WriteLine("Choice objects ID, to change property.\nPress M to go to Main Menu .");
             Console.Write("\n:");
+            
             int id = 0;
             string input = Console.ReadLine();
+            
             if (Int32.TryParse(input, out id))
             {
-                PropertySelection(id);
+                if (Home.equipments[id] != null)
+                {
+                    PropertySelection(id);
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input \nPress any key to continue");
+                    Console.ReadLine();
+                    MainMenu.ChoiceMenu();
+                }
             }
             else 
             { 
-                Console.WriteLine("Incorrect input"); 
+                MainMenu.ChoiceMenu();
             }
         }
 
@@ -49,13 +51,13 @@ namespace SmartHouse
                 switch (choice)
                 {
                     case 1:
-                        LampMenu.SetState(LampMenu.lamps[id]);
+                        LampMenu.SetState(id);
                         break;
                     case 2:
-                        LampMenu.SetName(LampMenu.lamps[id]);
+                        Home.SetName(id);
                         break;
                     case 3:
-                        LampMenu.SetBrightness(LampMenu.lamps[id]);
+                        LampMenu.SetBrightness(id);
                         break;
                     case 4:
                         SelectionId();

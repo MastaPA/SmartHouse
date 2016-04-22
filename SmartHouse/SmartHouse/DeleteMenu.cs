@@ -9,21 +9,7 @@ namespace SmartHouse
             Console.Clear();
             Console.WriteLine("Objects list.");
 
-            if (LampMenu.lamps == null || LampMenu.lamps.Length == 0) // do not work yet
-            {
-                Console.WriteLine("No items to delete.");
-            }
-            else
-            {
-                for (int i = 0; i < LampMenu.lamps.Length; i++)
-                {
-                    Console.WriteLine("Step" + i);
-                    if (LampMenu.lamps[i] != null)
-                    {
-                        LampMenu.Status(LampMenu.lamps[i]);
-                    }
-                }
-            }
+            StatusMenu.ViewObjects();
 
             Console.WriteLine("\nChoice objects ID, to delete, \nor press M to go to Main Menu .");
             Console.Write("\n:");
@@ -33,14 +19,14 @@ namespace SmartHouse
 
             if (Int32.TryParse(input, out id))
             {
-                if (LampMenu.lamps[id] == null)
+                if (Home.equipments[id] != null)
                 {
-                    Console.WriteLine("Incorect object ID!");
-                    MainMenu.ChoiceMenu();
+                    ConfirmDelete(id);
                 }
                 else
                 {
-                    ConfirmDelete(id);
+                    Console.WriteLine("Incorect object ID!");
+                    MainMenu.ChoiceMenu();
                 }
             }
             else
@@ -67,7 +53,7 @@ namespace SmartHouse
             {
                 case 'y':
                 case 'Y':
-                    LampMenu.Delete(id);
+                    Home.Delete(id);
                     SelectionId();
                     break;
                 case 'n':

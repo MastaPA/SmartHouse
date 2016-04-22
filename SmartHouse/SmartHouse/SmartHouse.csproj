@@ -48,9 +48,11 @@
     <Compile Include="LampMenu.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="List.cs" />
+    <Compile Include="ObjectsMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyMenu.cs" />
+    <Compile Include="Radio.cs" />
     <Compile Include="StatusMenu.cs" />
   </ItemGroup>
   <ItemGroup>

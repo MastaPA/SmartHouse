@@ -22,16 +22,17 @@ namespace SmartHouse
                 switch (choice)
                 {
                     case 1:
-                        LampMenu.CreateLamp();
+                        CreateMenu.SelectionObjectType();
                         break;
                     case 2:
                         StatusMenu.ViewObjects();
+                        StatusMenu.BackMainMenu();
                         break;
                     case 3:
-                        PropertyMenu.IdSelection();
+                        PropertyMenu.SelectionId();
                         break;
                     case 4:
-                        DeleteMenu.IdSelection();
+                        DeleteMenu.SelectionId();
                         break;
                     case 5:
 

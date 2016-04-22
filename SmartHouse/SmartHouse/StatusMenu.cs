@@ -7,19 +7,19 @@ namespace SmartHouse
         public static void ViewObjects()
         {
             Console.Clear();
-            for (int i = 0; i < LampMenu.lamps.Length; i++)
-            {
-                if (LampMenu.lamps[i] != null)
-                {
-                    LampMenu.Status(LampMenu.lamps[i]);
-                }
-                else { continue; }
-            }
+            Console.WriteLine("Objects list.");
 
-            foreach (BaseEquipment obj in List.objects)
+            foreach (BaseEquipment obj in Home.equipments)
             {
-                Console.WriteLine(obj.Id)
+                if (obj != null)
+                {
+                    Home.GetList(obj.Id);
+                }
             }
+        }
+
+        public static void BackMainMenu()
+        {
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadKey();
             MainMenu.ChoiceMenu();

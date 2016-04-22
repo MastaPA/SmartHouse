@@ -6,11 +6,9 @@ namespace SmartHouse
     {
         public int Brightness { get; set; }
 
-        public int Id { get; set; }
-
-        //public Lamp ( int id)
-        //{
-        //    Id = id;
-        //}
+        public override void Status()
+        {
+            Console.WriteLine("ID = {0} | Name - Lamp {1} | State - {2} | Brightness {3}%",Id, Name, (State ? "On" : "Off"), Brightness);
+        }
     }
 }
