@@ -9,7 +9,7 @@ namespace SmartHouse
             Console.WriteLine("Welcome to the SmartHouse!");
             Console.WriteLine("1. Settings.");
             Console.WriteLine("2. Exit.");
-            Console.Write("\n:");
+            Console.Write("\n:  ");
 
             int choice = 0;
 

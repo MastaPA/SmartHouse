@@ -13,7 +13,7 @@ namespace SmartHouse
             Console.WriteLine("3. Modify objecst.");
             Console.WriteLine("4. Remove objects.");
             Console.WriteLine("5. Quit programm.");
-            Console.Write("\n:");
+            Console.Write("\n:  ");
 
             int choice = 0;
             string input = Console.ReadLine();
@@ -25,8 +25,11 @@ namespace SmartHouse
                         CreateMenu.SelectionObjectType();
                         break;
                     case 2:
-                        StatusMenu.ViewObjects();
-                        StatusMenu.BackMainMenu();
+                        Home.GetList();
+
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadLine();
+                        MainMenu.ChoiceMenu();
                         break;
                     case 3:
                         PropertyMenu.SelectionId();

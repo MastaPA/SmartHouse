@@ -9,24 +9,24 @@ namespace SmartHouse
             Console.Clear();
             Console.WriteLine("Objects list.");
 
-            StatusMenu.ViewObjects();
+            Home.GetList();
 
             Console.WriteLine("\nChoice objects ID, to delete, \nor press M to go to Main Menu .");
-            Console.Write("\n:");
-            
+            Console.Write("\n:  ");
+
             int id = 0;
             string input = Console.ReadLine();
 
             if (Int32.TryParse(input, out id))
             {
-                if (Home.equipments[id] != null)
-                {
-                    ConfirmDelete(id);
-                }
-                else
+                if (id >= Home.equipments.Count && Home.equipments[id] == null)
                 {
                     Console.WriteLine("Incorect object ID!");
                     MainMenu.ChoiceMenu();
+                }
+                else
+                {
+                    ConfirmDelete(id);
                 }
             }
             else
@@ -44,7 +44,7 @@ namespace SmartHouse
                 Console.Clear();
                 Console.WriteLine("Are you sure want to delete this object?");
                 Console.WriteLine("Press Y for delete or N for back to previus menu.");
-                Console.Write("\n:");
+                Console.Write("\n:  ");
                 answer = char.Parse(Console.ReadLine());
             }
             while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N');
