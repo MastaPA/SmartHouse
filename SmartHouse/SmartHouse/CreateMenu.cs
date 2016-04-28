@@ -23,7 +23,7 @@ namespace SmartHouse
                 switch (choice)
                 {
                     case 1:
-                        LampMenu.CreateLamp();
+                        EquipmentMenu.CreateLamp();
                         break;
                     case 2:
                         EquipmentMenu.CreateRadio();

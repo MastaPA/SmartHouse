@@ -66,7 +66,7 @@ namespace SmartHouse
                         case 3:
                             if (Home.equipments[id].GetType() == typeof(Lamp))
                             {
-                                LampMenu.SetBrightness(id);
+                                EquipmentMenu.SetLampBrightness(id);
                             }
                             else
                             {
