@@ -8,8 +8,18 @@ namespace SmartHouse
 {
     internal static class Home
     {
-        public static List<BaseEquipment> equipments = new List<BaseEquipment>(10);
+        public static List<BaseEquipment> equipments = new List<BaseEquipment>();
 
+        private static int index = 0;
+        
+        public static void AddToList(BaseEquipment equip)
+        {
+            equip.Id = index;
+            equipments.Add(equip);
+            SetName(index);
+            index++;
+        }
+        
         public static void GetList()
         {
             Console.Clear();
@@ -37,7 +47,7 @@ namespace SmartHouse
                 name = Console.ReadLine();
             }
 
-            Home.equipments[id].Name = name;
+            equipments[id].Name = name;
         }
 
         public static void SetState(int id)
@@ -70,6 +80,19 @@ namespace SmartHouse
             }
         }
 
+        public static bool CheckId(int id)
+        {
+
+            if (equipments.Contains(equipments[id]))
+            {
+                return true;
+            }
+            else 
+            {
+                throw new Exception("Incorect ID");
+            }
+        }
+        
         public static void Delete(int id)
         {
             equipments[id] = null;

@@ -4,7 +4,7 @@ namespace SmartHouse
 {
     public abstract class BaseEquipment
     {
-        public static int Counter { get; private set; }
+        //public static int Counter { get; private set; }
 
         public bool State { get; set; }
         
@@ -15,7 +15,7 @@ namespace SmartHouse
         public BaseEquipment()
         {
             State = false;
-            Counter += 1;
+            //Counter += 1;
         }
 
         public abstract void Status();

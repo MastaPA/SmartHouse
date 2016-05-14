@@ -23,16 +23,20 @@ namespace SmartHouse
                 switch (choice)
                 {
                     case 1:
-                        EquipmentMenu.CreateLamp();
+                        Home.AddToList(new Lamp());    
+                        Console.WriteLine("lamp successfully created\nPress Enter to continue");
                         break;
                     case 2:
-                        EquipmentMenu.CreateRadio();
+                        Home.AddToList(new Radio());    
+                        Console.WriteLine("Radio successfully created\nPress Enter to continue");
                         break;
                     case 3:
-                        EquipmentMenu.CreateConditioner();
+                        Home.AddToList(new Conditioner());
+                        Console.WriteLine("Conditioner successfully created\nPress Enter to continue");
                         break;
                     case 4:
-                        EquipmentMenu.CreateBoiler();
+                        Home.AddToList(new Boiler());
+                        Console.WriteLine("Boiler successfully created\nPress Enter to continue");
                         break;
                     case 5:
                         MainMenu.ChoiceMenu();
@@ -43,6 +47,9 @@ namespace SmartHouse
                         MainMenu.ChoiceMenu();
                         break;
                 }
+
+                Console.ReadKey();
+                MainMenu.ChoiceMenu();
             }
             else
             {

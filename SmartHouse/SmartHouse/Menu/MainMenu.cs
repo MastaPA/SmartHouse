@@ -4,6 +4,39 @@ namespace SmartHouse
 {
     internal class MainMenu
     {
+        public static void EntryPoint()
+        {
+            Console.Clear();
+            Console.WriteLine("Welcome to the SmartHouse!");
+            Console.WriteLine("1. Settings.");
+            Console.WriteLine("2. Exit.");
+            Console.Write("\n:  ");
+
+            int choice = 0;
+
+            while (choice != 2)
+            {
+                string input = Console.ReadLine();
+                if (Int32.TryParse(input, out choice))
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            ChoiceMenu();
+                            break;
+                        case 2:
+                            Console.WriteLine("Press any key to exit");
+                            break;
+                        default:
+                            Console.WriteLine("You enter invalid value\nTry again");
+                            break;
+                    }
+                }
+
+                Console.ReadKey();
+            }
+        }
+        
         public static void ChoiceMenu()
         {
             Console.Clear();
@@ -27,7 +60,7 @@ namespace SmartHouse
                     case 2:
                         Home.GetList();
 
-                        Console.WriteLine("\nPress any key to continue");
+                        Console.WriteLine("\nPress Enter to continue");
                         Console.ReadLine();
                         MainMenu.ChoiceMenu();
                         break;
@@ -38,7 +71,7 @@ namespace SmartHouse
                         DeleteMenu.SelectionId();
                         break;
                     case 5:
-
+                        EntryPoint();
                         break;
                     default:
                         break;

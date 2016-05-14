@@ -19,14 +19,14 @@ namespace SmartHouse
 
             if (Int32.TryParse(input, out id))
             {
-                if (id >= Home.equipments.Count && Home.equipments[id] == null)
+                if (Home.CheckId(id))
                 {
-                    Console.WriteLine("Incorect object ID!");
-                    MainMenu.ChoiceMenu();
+                    ConfirmDelete(id);
                 }
                 else
                 {
-                    ConfirmDelete(id);
+                    Console.WriteLine("Incorect object ID!");
+                    MainMenu.ChoiceMenu();
                 }
             }
             else
