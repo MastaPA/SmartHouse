@@ -1,4 +1,5 @@
 ﻿using System;
+using SmartHouse.Eqipment;
 
 namespace SmartHouse
 {
@@ -16,15 +17,16 @@ namespace SmartHouse
             
             if (Int32.TryParse(input, out id))
             {
-                if (id >= Home.equipments.Count && Home.equipments[id] == null)
+                if (Home.CheckId(id))
+                {
+                    PropertySelection(id);
+                }
+                else
                 {
                     Console.WriteLine("Incorrect input \nPress any key to continue");
                     Console.ReadLine();
                     MainMenu.ChoiceMenu();
-                }
-                else
-                {
-                    PropertySelection(id);
+                   
                 }
             }
             else 

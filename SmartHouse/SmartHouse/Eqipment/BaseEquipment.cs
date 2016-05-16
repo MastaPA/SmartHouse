@@ -1,11 +1,9 @@
 ﻿using System;
 
-namespace SmartHouse
+namespace SmartHouse.Eqipment
 {
-    public abstract class BaseEquipment
+    public class BaseEquipment : IBaseEquipment
     {
-        //public static int Counter { get; private set; }
-
         public bool State { get; set; }
         
         public string Name { get; set; }
@@ -15,9 +13,11 @@ namespace SmartHouse
         public BaseEquipment()
         {
             State = false;
-            //Counter += 1;
         }
 
-        public abstract void Status();
+        public virtual void Status()
+        {
+            Console.WriteLine("ID:  " + Id);
+        }
     }
 }

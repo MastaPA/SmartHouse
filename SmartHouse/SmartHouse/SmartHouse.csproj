@@ -44,6 +44,7 @@
     <Compile Include="Eqipment\BaseEquipment.cs" />
     <Compile Include="Eqipment\Boiler.cs" />
     <Compile Include="Eqipment\Conditioner.cs" />
+    <Compile Include="Eqipment\IBaseEquipment.cs" />
     <Compile Include="Menu\CreateMenu.cs" />
     <Compile Include="Menu\DeleteMenu.cs" />
     <Compile Include="Eqipment\Lamp.cs" />

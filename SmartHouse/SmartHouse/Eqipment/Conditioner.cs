@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SmartHouse
+namespace SmartHouse.Eqipment
 {
     class Conditioner : BaseEquipment
     {

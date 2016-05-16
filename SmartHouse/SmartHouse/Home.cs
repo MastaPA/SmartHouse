@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SmartHouse.Eqipment;
 
 namespace SmartHouse
 {
@@ -24,7 +25,7 @@ namespace SmartHouse
         {
             Console.Clear();
             Console.WriteLine("Objects list.");
-            Console.WriteLine("Amount of objects is - {0}", equipments.Count);
+            //Console.WriteLine("Amount of objects is - {0}", equipments.Count);
 
             foreach (BaseEquipment equipment in equipments)
             {
@@ -82,15 +83,22 @@ namespace SmartHouse
 
         public static bool CheckId(int id)
         {
-
-            if (equipments.Contains(equipments[id]))
+            bool check = false;
+            
+            try
             {
-                return true;
+                if (equipments[id] != null)
+                {
+                check = true;
+                }
             }
-            else 
+            catch
             {
-                throw new Exception("Incorect ID");
+                Console.WriteLine("Incorrect ID.");
+                check = false;
+                return check;
             }
+            return check;
         }
         
         public static void Delete(int id)

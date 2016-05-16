@@ -1,4 +1,5 @@
 ﻿using System;
+using SmartHouse.Eqipment;
 
 namespace SmartHouse
 {
@@ -25,12 +26,12 @@ namespace SmartHouse
                 }
                 else
                 {
-                    Console.WriteLine("Incorect object ID!");
+                    Console.ReadKey();
                     MainMenu.ChoiceMenu();
                 }
             }
             else
-            {
+            {   
                 MainMenu.ChoiceMenu();
             }
         }
